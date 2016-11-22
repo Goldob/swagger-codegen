@@ -1,15 +1,10 @@
-'use strict';
-
-var url = require('url');
-
+'use strict'
 {{#operations}}
 
-var {{classname}} = require('./{{classname}}Service');
-
+const {{classname}} = require('./{{classname}}Service')
 {{#operation}}
 
-module.exports.{{nickname}} = function {{nickname}} (req, res, next) {
-  {{classname}}.{{nickname}}(req.swagger.params, res, next);
-};
+module.exports.{{nickname}} = (req, res, next) =>
+  {{classname}}.{{nickname}}(req.swagger.params, res, next)
 {{/operation}}
 {{/operations}}
